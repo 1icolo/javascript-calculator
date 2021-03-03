@@ -6,9 +6,10 @@ const body = document.querySelector("body");
 
 // CE Function
 function clearEntry() {
-	if (displayMain.innerHTML.charAt(1) !== "")
-		displayMain.innerHTML = displayMain.innerHTML.slice(0, -1);
-	else displayMain.innerHTML = "0";
+	// if (displayMain.innerHTML.charAt(1) !== "")
+	// 	displayMain.innerHTML = displayMain.innerHTML.slice(0, -1);
+	// else displayMain.innerHTML = "0";
+	displayMain.innerHTML = "0";
 
 	if (displayOperations.innerHTML.charAt(1) !== "")
 		displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
@@ -24,6 +25,8 @@ function allClear() {
 // Equals Function
 function evaluate() {
 	displayMain.innerHTML = eval(displayOperations.innerHTML);
+	if (displayMain.innerHTML.length > 10)
+		displayMain.innerHTML = displayMain.innerHTML.substring(0, 10) + "...";
 }
 
 // Any button pressed that has .button class in it
