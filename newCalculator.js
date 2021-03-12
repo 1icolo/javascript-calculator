@@ -1,3 +1,5 @@
+//add overflow and scrollbar
+
 // Selecting stuff from DOM
 const displayMain = document.querySelector(".display-main");
 const displayOperations = document.querySelector(".display-operations");
@@ -14,6 +16,34 @@ function clearEntry() {
 	if (displayOperations.innerHTML.charAt(1) !== "")
 		displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
 	else displayOperations.innerHTML = "0";
+
+	// 	if (
+	// 		isNaN(
+	// 			displayOperations.innerHTML.charAt(displayOperations.innerHTML.length - 1)
+	// 		)
+	// 	)
+	// 		forOperator();
+	// 	else forNumber();
+
+	// 	function forOperator() {
+	// 		console.log("operator");
+	// 		if (displayOperations.innerHTML.charAt(1) !== "")
+	// 			displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
+	// 		else displayOperations.innerHTML = "0";
+	// 	}
+
+	// 	function forNumber() {
+	// 		console.log("number");
+	// 		for (let i = displayOperations.innerHTML.length - 1; i > 0; i--) {
+	// 			if (isNaN(displayOperations.innerHTML.charAt(i))) {
+	// 				displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
+	// 			}
+	// 			console.log(i);
+	// 		}
+	// 		if (displayOperations.innerHTML.charAt(1) !== "")
+	// 			displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
+	// 		else displayOperations.innerHTML = "0";
+	// 	}
 }
 
 // AC Function
@@ -25,8 +55,8 @@ function allClear() {
 // Equals Function
 function evaluate() {
 	displayMain.innerHTML = eval(displayOperations.innerHTML);
-	if (displayMain.innerHTML.length > 10)
-		displayMain.innerHTML = displayMain.innerHTML.substring(0, 10) + "...";
+	// if (displayMain.innerHTML.length > 10)
+	// 	displayMain.innerHTML = displayMain.innerHTML.substring(0, 10) + "...";
 }
 
 // Any button pressed that has .button class in it
@@ -45,6 +75,9 @@ allButtons.forEach((btn) => {
 			clearEntry();
 		}
 
+		// Equal Button
+		if (button === "=") evaluate();
+
 		// Any Number Button
 		if ((parseInt(button) >= 0 && parseInt(button) < 10) || button === ".") {
 			if (displayMain.innerHTML != 0) displayMain.innerHTML += button;
@@ -59,9 +92,6 @@ allButtons.forEach((btn) => {
 			displayMain.innerHTML = button;
 			displayOperations.innerHTML += button;
 		}
-
-		// Equal Button
-		if (button === "=") evaluate();
 	});
 });
 
@@ -69,7 +99,7 @@ allButtons.forEach((btn) => {
 // For Keyboard support
 body.addEventListener("keydown", function (e) {
 	let pressedKey = e.key;
-	console.log(pressedKey);
+	console.log("Keyboard: " + pressedKey);
 	if (
 		(pressedKey > -1 && pressedKey < 10) ||
 		pressedKey === "/" ||
