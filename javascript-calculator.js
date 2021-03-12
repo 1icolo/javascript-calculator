@@ -8,42 +8,11 @@ const body = document.querySelector("body");
 
 // CE Function
 function clearEntry() {
-	// if (displayMain.innerHTML.charAt(1) !== "")
-	// 	displayMain.innerHTML = displayMain.innerHTML.slice(0, -1);
-	// else displayMain.innerHTML = "0";
 	displayMain.innerHTML = "0";
 
 	if (displayOperations.innerHTML.charAt(1) !== "")
 		displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
 	else displayOperations.innerHTML = "0";
-
-	// 	if (
-	// 		isNaN(
-	// 			displayOperations.innerHTML.charAt(displayOperations.innerHTML.length - 1)
-	// 		)
-	// 	)
-	// 		forOperator();
-	// 	else forNumber();
-
-	// 	function forOperator() {
-	// 		console.log("operator");
-	// 		if (displayOperations.innerHTML.charAt(1) !== "")
-	// 			displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
-	// 		else displayOperations.innerHTML = "0";
-	// 	}
-
-	// 	function forNumber() {
-	// 		console.log("number");
-	// 		for (let i = displayOperations.innerHTML.length - 1; i > 0; i--) {
-	// 			if (isNaN(displayOperations.innerHTML.charAt(i))) {
-	// 				displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
-	// 			}
-	// 			console.log(i);
-	// 		}
-	// 		if (displayOperations.innerHTML.charAt(1) !== "")
-	// 			displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
-	// 		else displayOperations.innerHTML = "0";
-	// 	}
 }
 
 // AC Function
@@ -55,8 +24,6 @@ function allClear() {
 // Equals Function
 function evaluate() {
 	displayMain.innerHTML = eval(displayOperations.innerHTML);
-	// if (displayMain.innerHTML.length > 10)
-	// 	displayMain.innerHTML = displayMain.innerHTML.substring(0, 10) + "...";
 }
 
 // Any button pressed that has .button class in it
