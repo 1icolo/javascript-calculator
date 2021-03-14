@@ -10,6 +10,17 @@ const body = document.querySelector("body");
 function clearEntry() {
 	displayMain.innerHTML = "0";
 
+	// Recursively call CE if current character is a number and is not equal to 0
+	if (
+		displayOperations.innerHTML.charAt(displayOperations.innerHTML.length - 1) %
+			1 ==
+			0 &&
+		displayOperations.innerHTML !== "0"
+	)
+		// idk why this only works with setTimeout
+		setTimeout(() => clearEntry(), 1);
+	// clearEntry();
+
 	if (displayOperations.innerHTML.charAt(1) !== "")
 		displayOperations.innerHTML = displayOperations.innerHTML.slice(0, -1);
 	else displayOperations.innerHTML = "0";
