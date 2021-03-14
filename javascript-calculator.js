@@ -1,5 +1,3 @@
-//add overflow and scrollbar
-
 // Selecting stuff from DOM
 const displayMain = document.querySelector(".display-main");
 const displayOperations = document.querySelector(".display-operations");
